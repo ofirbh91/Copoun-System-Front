@@ -1,0 +1,82 @@
+<div class="section section-buttons">
+  <div class="container">
+    <div class="tim-title"></div>
+    <div id="buttons">
+      <div class="tim-title">
+        <h3>
+          Buttons
+          <br />
+          <small>Pick your style</small>
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <button type="button" class="btn btn-danger">Default</button>
+          <button type="button" class="btn btn-danger btn-round">Round</button>
+          <button type="button" class="btn btn-danger btn-round">
+            <i class="fa fa-heart"></i> With Icon
+          </button>
+          <button type="button" class="btn btn-danger btn-just-icon">
+            <i class="fa fa-heart"></i>
+          </button>
+          <button type="button" class="btn btn-danger btn-link">Simple</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tim-title">
+      <h3>Inputs</h3>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Default" />
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group has-success">
+          <input
+            type="text"
+            class="form-control form-control-success"
+            id="inputSuccess1"
+            value="Success"
+          />
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group has-danger">
+          <input
+            type="text"
+            class="form-control form-control-danger"
+            id="inputDanger1"
+            value="Error"
+          />
+          <div class="form-control-feedback">
+            Sorry, that username's taken. Try another?
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div
+          class="input-group"
+          [ngClass]="{ 'input-group-focus': focus === true }"
+        >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-describedby="basic-addon1"
+            (focus)="focus = true"
+            (blur)="focus = false"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon1"
+              ><i class="fa fa-group" aria-hidden="true"></i
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+</div>

@@ -1,0 +1,173 @@
+<!-- this is the update form  -->
+<div class="update" *ngIf="this.company!=null">
+    <form class="register-form" #formInfo="ngForm">
+      <h3>update {{company.name}}</h3>
+      <label><small>name</small></label>
+      <div
+        class="input-group form-group-no-border"
+        [ngClass]="{ 'input-group-focus': focus === true }"
+      >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          [(ngModel)]="company.name"
+          #name="ngModel"
+          class="form-control"
+          placeholder="{{company.name}}"
+        />
+      </div>
+      <label><small>email</small></label>
+      <div
+        class="input-group form-group-no-border"
+        [ngClass]="{ 'input-group-focus': focus === true }"
+      >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          title="email must be a valid email address"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          [(ngModel)]="company.email"
+          #email="ngModel"
+          class="form-control"
+          placeholder="{{ company.email }}"
+        />
+        <div
+        *ngIf="email.invalid && (email.touched || email.dirty)"
+        class="alert alert-danger"
+      >
+        <i class="nc-icon nc-simple-remove"></i>
+      </div>
+      <div *ngIf="email.valid" class="alert alert-success">
+        <i class="nc-icon nc-satisfied"></i>
+      </div>
+      </div>
+      <label><small>password</small></label>
+      <div
+        class="input-group form-group-no-border"
+        [ngClass]="{ 'input-group-focus': focus === true }"
+      >
+        <input
+          input
+          type="password"
+          id="password"
+          name="password" 
+          title="password must contain at least 8 characters and one capital letter one small letter and at least one number" 
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+          required
+          [(ngModel)]="company.password"
+          #password="ngModel"
+          class="form-control"
+          placeholder="{{ company.password }}"
+        />
+        <div
+        *ngIf="password.invalid && (password.touched || password.dirty)"
+        class="alert alert-danger"
+      >
+        <i class="nc-icon nc-simple-remove"></i>
+      </div>
+      <div *ngIf="password.valid" class="alert alert-success">
+        <i class="nc-icon nc-satisfied"></i>
+      </div>
+      </div>
+     
+  
+      <button
+        class="btn btn-success btn-block btn-round"
+        type="button"
+        [disabled]="!formInfo.valid"
+        (click)='updateCompany(comp)'
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  <!-- this is the add form  -->
+  <div class="add" *ngIf="this.company==null">
+    <h3>Add new Company</h3>
+    <form class="register-form" #formInfo="ngForm">
+      <label><small>name</small></label>
+      <div
+        class="input-group form-group-no-border"
+        [ngClass]="{ 'input-group-focus': focus === true }"
+      >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          [(ngModel)]="comp.name"
+          #name="ngModel"
+          class="form-control"
+          placeholder="name"
+        />
+      </div>
+      <label><small>email</small></label>
+      <div
+        class="input-group form-group-no-border"
+        [ngClass]="{ 'input-group-focus': focus === true }"
+      >
+        <input
+          type="text"
+          id="email"
+          name="email"
+          title="email must be a valid email address"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          required
+          [(ngModel)]="comp.email"
+          #email="ngModel"
+          class="form-control"
+          placeholder="email"
+        />
+        <div
+        *ngIf="email.invalid && (email.touched || email.dirty)"
+        class="alert alert-danger"
+      >
+        <i class="nc-icon nc-simple-remove"></i>
+      </div>
+      <div *ngIf="email.valid" class="alert alert-success">
+        <i class="nc-icon nc-satisfied"></i>
+      </div>
+      </div>
+      <label><small>password</small></label>
+      <div
+        class="input-group form-group-no-border"
+        [ngClass]="{ 'input-group-focus': focus === true }"
+      >
+        <input
+          input
+          type="password"
+          id="password"
+          name="password"   
+          title="password must contain at least 8 characters and one capital letter one small letter and at least one number"       
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+          required
+          [(ngModel)]="comp.password"
+          #password="ngModel"
+          class="form-control"
+          placeholder="password"
+        />
+        <div
+        *ngIf="password.invalid && (password.touched || password.dirty)"
+        class="alert alert-danger"
+      >
+        <i class="nc-icon nc-simple-remove"></i>
+      </div>
+      <div *ngIf="password.valid" class="alert alert-success">
+        <i class="nc-icon nc-satisfied"></i>
+      </div>
+      </div>
+    
+      <button
+        [disabled]="!formInfo.valid"
+        class="btn btn-success btn-block btn-round"
+        type="button"
+        (click)='addCompany()'
+      >
+        Submit
+      </button>
+    </form>
+  </div>

@@ -1,0 +1,38 @@
+<div class="main">
+    <table class="table table-striped table-responsive-md btn-table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>companyId</th>
+          <th>Category</th>
+          <th>title</th>
+          <th>description</th>
+          <th>startDate</th>
+          <th>endDate</th>
+          <th>amount</th>
+          <th>price</th>
+          <th>image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coup of coupons">
+          <td>{{ coup.id }}</td>
+          <td>{{ coup.companyId }}</td>
+          <td>{{ coup.category }}</td>
+          <td>{{ coup.title }}</td>
+          <td>{{ coup.decription }}</td>
+          <td>{{ coup.startDate }}</td>
+          <td>{{ coup.endDate }}</td>
+          <td>{{ coup.amount }}</td>
+          <td>{{ coup.price }}</td>
+          <td><img src="{{ coup.image }}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+            type="button"
+            class="btn btn-alert btn-round"
+            (click)='closeAll()'
+          >close
+        </button>
+  </div>

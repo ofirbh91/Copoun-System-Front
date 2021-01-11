@@ -1,0 +1,97 @@
+<ngb-tabset type="pills" class="nav-pills" >
+    <ngb-tab title="Companies" >
+      <ng-template ngbTabContent>
+        <div class="main">
+          <input class="id"
+          type="number"
+          #id
+          placeholder="id"
+          min = 0 oninput="validity.valid||(value='');"
+          (keydown.enter)="getOneCompany(id.value)"/>
+          <table class="table table-striped table-responsive-md btn-table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+                <th>coupons</th>
+                <th> <button class="btn btn-success btn-round" (click)="add()"><img src="../../../assets/img/add_circle-24px.svg" title='Add'></button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let comp of getCompanies()">
+                <td>{{ comp.id }}</td>
+                <td>{{ comp.name }}</td>
+                <td>{{ comp.email }}</td>
+                <td>{{ comp.password }}</td>
+                <td><button type="button" class="btn btn-custom btn-round" (click)="showCoupons(comp)">Coupons</button></td>
+                <td><button type="button" class="btn btn-warning btn-round" (click)="update(comp)">
+                   <img src="../../../assets/img/edit-24px.svg" title="Edit">
+                  </button>
+                <button type="button" class="btn btn-danger btn-round" (click)="delete(comp)"> <img src="../../../assets/img/delete_forever-24px.svg" title="Delete"></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Customers">
+    <ng-template ngbTabContent>
+      <div class="main">
+        <input class="id"
+        type="number"
+        #id
+        placeholder="id"
+        min = 0 oninput="validity.valid||(value='');"
+        (keydown.enter)="getOneCustomer(id.value)"/>
+        <table class="table table-striped table-responsive-md btn-table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>email</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>password</th>
+              <th>coupons</th>
+              <th>
+                <button
+                  type="button"
+                  class="btn btn-success btn-round"
+                  (click)="addCustomer()"
+                >
+                <img src="../../../assets/img/add_circle-24px.svg" title='Add'>
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cust of getCustomers()">
+              <td>{{ cust.id }}</td>
+              <td>{{ cust.email }}</td>
+              <td>{{ cust.firstName }}</td>
+              <td>{{ cust.lastName }}</td>
+              <td>{{ cust.password }}</td>
+              <td>
+                <button type="button" class="btn btn-custom btn-round" (click)="showCoupons(cust)">
+                  Coupons
+                </button>
+              </td>
+              <td>
+              <button type="button" class="btn btn-warning btn-round" (click)="updateCustomer(cust)">
+               <img src="../../../assets/img/edit-24px.svg" title="Edit">
+              </button>
+              <button type="button" class="btn btn-danger btn-round" (click)="deleteCustomer(cust)">
+                <img src="../../../assets/img/delete_forever-24px.svg" title="Delete">
+              </button>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+
+
+

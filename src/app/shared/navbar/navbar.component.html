@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="https://www.creative-tim.com">Coupon System</a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+             
+                <li class="nav-item" *ngIf="isHome()">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success  btn-round dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Login
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" [routerLink]="['signup', 'admin']">Admin</a>
+                          <a class="dropdown-item" [routerLink]="['signup' , 'company']">Company</a>
+                          <a class="dropdown-item" [routerLink]="['signup', 'customer']">Customer</a>
+                          <div class="dropdown-divider"></div>
+                          
+                        </div>
+                      </div>
+                </li>
+                
+                <li class="nav-item" *ngIf="isComponent()">
+                    <button class="btn btn-danger  btn-round" (click)='logout()'>Logout</button>
+                </li>
+                <li class="nav-item" *ngIf="!isHome() && !isComponent()">
+                    <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><svg  width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+                        <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                      </svg></a>
+                    <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Kit</a>
+                </li>
+                <li class="nav-item" *ngIf="isDocumentation()">
+                    <a href="https://github.com/creativetimofficial/paper-kit-2-angular/issues?ref=pk2-free-local" target="_blank" class="nav-link">Have an issue</a>
+                </li>
+               
+             
+            </ul>
+        </div>
+    </div>
+</nav>

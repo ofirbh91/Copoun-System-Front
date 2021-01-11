@@ -1,0 +1,323 @@
+<div class="update" *ngIf="this.coupon!=null">
+  <form class="register-form" #formInfo="ngForm">
+   <h3>Update Coupon</h3>
+   <br>
+    <label><small>Title</small></label>
+    <div
+      class="input-group form-group-no-border"
+      [ngClass]="{ 'input-group-focus': focus === true }"
+    >
+      <input
+        type="text"
+        id="Title"
+        name="Title"
+        required
+        [(ngModel)]="coupon.title"
+        #Title="ngModel"
+        class="form-control"
+        placeholder="{{ coupon.title }}"
+      />
+    </div>
+    <label><small>Category</small></label>
+   
+    <select
+      id="Category"
+      name="Category"
+      required
+      [(ngModel)]="coupon.category"
+      #category="ngModel"
+      class="form-control"
+    >
+      <option value="" disabled selected>{{ coupon.category }}</option>
+      <option value="food">food</option>
+      <option value="electronics">electronics</option>
+      <option value="restaurant">restaurant</option>
+      <option value="vacation">vacation</option>
+      <option value="gaming">gaming</option>
+      <option value="cloths">cloths</option>
+    </select>
+    <label><small>Description</small></label>
+    <div
+      class="input-group form-group-no-border"
+      [ngClass]="{ 'input-group-focus': focus === true }"
+    >
+      <input
+        type="text"
+        id="decription"
+        name="decription"
+        required
+        [(ngModel)]="coupon.decription"
+        #decriptionInfo="ngModel"
+        class="form-control"
+       
+      />
+    </div>
+    <label><small>Start Date</small></label>
+    <div
+      class="input-group form-group-no-border"
+      [ngClass]="{ 'input-group-focus': focus === true }"
+    >
+      <input
+        input
+        type="text"
+        [(ngModel)]="coupon.startDate"
+        onfocus="(this.type='date')"
+        id="Start Date"
+        name="Start Date"
+        required
+        date
+     
+        #startDate="ngModel"
+        class="form-control"
+      />
+    </div>
+    <label><small>End Date</small></label>
+    <div
+      class="input-group form-group-no-border"
+      [ngClass]="{ 'input-group-focus': focus === true }"
+    >
+      <input
+        input
+        type="text"
+        [(ngModel)]="coupon.endDate"
+        onfocus="(this.type='date')"
+        id="End Date"
+        name="End Date"
+        required
+        #endDate="ngModel"
+        class="form-control"
+      />
+    </div>
+    <label><small>Amount</small></label>
+    <div
+      class="input-group form-group-no-border"
+      [ngClass]="{ 'input-group-focus': focus === true }"
+    >
+      <input
+        value="{{ coupon.amount }}"
+        min="0"
+        oninput="validity.valid||(value='')"
+        type="number"
+        id="Amount"
+        name="Amount"
+        required
+        number
+        [(ngModel)]="coupon.amount"
+        #Amount="ngModel"
+        class="form-control"
+        placeholder="{{ coupon.amount }}"
+      />
+    </div>
+    <label><small>Price</small></label>
+    <div
+      class="input-group form-group-no-border"
+      [ngClass]="{ 'input-group-focus': focus === true }"
+    >
+      <input
+        type="number"
+        min="0"
+        oninput="validity.valid||(value='')"
+        id="Price"
+        name="Price"
+       
+        required
+        number
+        [(ngModel)]="coupon.price"
+        #Price="ngModel"
+        class="form-control"
+        value="placeholder"
+        placeholder="{{ coupon.price }}"
+      />
+    </div>
+    <label><small>Image</small></label>
+    <div
+      class="input-group form-group-no-border"
+      [ngClass]="{ 'input-group-focus': focus === true }"
+    >
+      <input
+        type="url"
+        id="Image"
+        name="Image"
+        required
+        [(ngModel)]="coupon.image"
+        #Image="ngModel"
+        class="form-control"
+       
+      />
+    </div>
+
+    <button
+      class="btn btn-success btn-block btn-round"
+      type="button"
+      (click)="updateCoupon()"
+      
+    >
+      ok
+    </button>
+  </form>
+</div>
+
+ <div class="add" *ngIf="this.coupon==null">
+    <form class="register-form" #formInfo="ngForm">
+     
+      <br>
+      <h3>Add Coupon</h3>
+       <label><small>title</small></label>
+       <div
+         class="input-group form-group-no-border"
+         [ngClass]="{ 'input-group-focus': focus === true }"
+       >
+         <input
+           type="text"
+           id="Title"
+           name="Title"
+           required
+           [(ngModel)]="coup.title"
+           #Title="ngModel"
+           class="form-control"
+           placeholder="title"
+         />
+       </div>
+       <label><small>Category</small></label>
+      
+       <select
+         id="Category"
+         name="Category"
+         required
+         [(ngModel)]="coup.category"
+         #category="ngModel"
+         class="custom-select"
+         
+       >
+         <option disabled selected value ="">Choose Category</option>
+         <option value="food">food</option>
+         <option value="electronics">electronics</option>
+         <option value="resturant">restaurant</option>
+         <option value="vacation">vacation</option>
+         <option value="gaming">gaming</option>
+         <option value="cloths">cloths</option>
+       </select>
+       <label><small>Description</small></label>
+       <div
+         class="input-group form-group-no-border"
+         [ngClass]="{ 'input-group-focus': focus === true }"
+       >
+         <input
+           type="text"
+           id="decription"
+           name="decription"
+           required
+           [(ngModel)]="coup.decription"
+           #decriptionInfo="ngModel"
+           class="form-control"
+           placeholder="description"
+          
+         />
+       </div>
+       <label><small>Start Date</small></label>
+       <div
+         class="input-group form-group-no-border"
+         [ngClass]="{ 'input-group-focus': focus === true }"
+       >
+         <input
+           input
+           type="text"
+           [(ngModel)]="coup.startDate"
+           onfocus="(this.type='date')"
+           id="Start Date"
+           name="Start Date"
+           required
+           date
+           placeholder="start date"
+           #startDate="ngModel"
+           class="form-control"
+         />
+       </div>
+       <label><small>End Date</small></label>
+       <div
+         class="input-group form-group-no-border"
+         [ngClass]="{ 'input-group-focus': focus === true }"
+       >
+         <input
+           input
+           type="text"
+           [(ngModel)]="coup.endDate"
+           onfocus="(this.type='date')"
+           id="End Date"
+           name="End Date"
+           required
+           #endDate="ngModel"
+           class="form-control"
+           placeholder="end date"
+         />
+       </div>
+       <label><small>Amount</small></label>
+       <div
+         class="input-group form-group-no-border"
+         [ngClass]="{ 'input-group-focus': focus === true }"
+       >
+         <input
+          
+           min="0"
+           oninput="validity.valid||(value='')"
+           type="number"
+           id="Amount"
+           name="Amount"
+           required
+           number
+           [(ngModel)]="coup.amount"
+           #Amount="ngModel"
+           class="form-control"
+           placeholder="amount"
+         />
+       </div>
+       <label><small>Price</small></label>
+       <div
+         class="input-group form-group-no-border"
+         [ngClass]="{ 'input-group-focus': focus === true }"
+       >
+         <input
+           type="number"
+           min="0"
+           oninput="validity.valid||(value='')"
+           id="Price"
+           name="Price"
+          
+           required
+           number
+           [(ngModel)]="coup.price"
+           #Price="ngModel"
+           class="form-control"
+           value="placeholder"
+           placeholder="price"
+         />
+       </div>
+       <label><small>Image</small></label>
+       <div
+         class="input-group form-group-no-border"
+         [ngClass]="{ 'input-group-focus': focus === true }"
+       >
+         <input
+           type="url"
+           id="Image"
+           name="Image"
+           required
+           [(ngModel)]="coup.image"
+           #Image="ngModel"
+           class="form-control"
+           placeholder="image"
+         />
+       </div>
+   
+       <button
+       [disabled]="!formInfo.valid"
+         class="btn btn-success btn-block btn-round"
+         type="button"
+         (click)="addCoupon()"
+         
+       >
+         ok
+       </button>
+     </form>
+   
+ </div>

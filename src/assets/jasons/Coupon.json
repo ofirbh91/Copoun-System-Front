@@ -1,0 +1,48 @@
+[{
+	"id": 1,
+	"companyId": 2,
+	"category": "gaming",
+	"title": "cooling pad",
+	"decription": "quality artifact",
+	"startDate": "2018-08-22",
+	"endDate": "2021-08-23",
+	"amount": 4,
+	"price": 55.5,
+	"image": "SDfsd" 
+  },
+  {
+	"id": 2,
+	"companyId": 2,
+	"category": "resturant",
+	"title": "flora",
+	"decription": "Charlie and a half",
+	"startDate": "2005-02-28",
+	"endDate": "2021-08-23",
+	"amount": 4,
+	"price": 54,
+	"image": "dsdf"
+  },
+  {
+	"id": 3,
+	"companyId": 2,
+	"category": "food",
+	"title": "ice cream",
+	"decription": "choclate",
+	"startDate": "2015-05-28",
+	"endDate": "2019-12-23",
+	"amount": 7,
+	"price": 50,
+	"image": "dsdf"
+  },
+  {
+	"id": 4,
+	"companyId": 2,
+	"category": "electronics",
+	"title": "leptop",
+	"decription": "good leptop",
+	"startDate": "2014-02-10",
+	"endDate": "2019-04-08",
+	"amount": 3,
+	"price": 60,
+	"image": "dsdf"
+  }]

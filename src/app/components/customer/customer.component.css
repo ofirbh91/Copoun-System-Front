@@ -1,0 +1,20 @@
+.noCoupon{
+
+    text-align:center;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+.coupImg{
+    height: 80px;
+    width: 150px;
+}
+.toPurchase{
+    height: 20px;
+    width: 40px;
+}
+.purchased{
+    height: 40px;
+    width: 60px;
+}
+
